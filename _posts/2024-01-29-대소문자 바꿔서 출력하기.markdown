@@ -1,0 +1,49 @@
+---
+layout: post
+title: "대소문자 바꿔서 출력하기"
+date: 2024-01-29 11:30:00 +0900
+categories: Javascript
+---
+
+영어 알파벳으로 이루어진 문자열 str이 주어집니다.
+각 알파벳을 대문자는 소문자로 소문자는 대문자로 변환해서 출력하는 코드를 작성해 보세요.
+
+※ 제한 사항
+1 ≤ str의 길이 ≤ 20
+str은 알파벳으로 이루어진 문자열입니다.
+
+### 입력 #1
+
+aBcDeFg
+
+### 출력 #1
+
+AbCdEfG
+
+```javascript
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+let input = [];
+
+rl.on("line", function (line) {
+  input = [line];
+}).on("close", function () {
+  const str = input[0];
+  const reversedStr = str
+    .split("")
+    .map((char) => {
+      if (char === char.toUpperCase()) {
+        return char.toLowerCase();
+      } else {
+        return char.toUpperCase();
+      }
+    })
+    .join("");
+
+  console.log(reversedStr);
+});
+```
