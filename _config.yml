@@ -56,6 +56,8 @@ plainwhite:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-paginate
 #  - jekyll-feed
 
 paginate: 5
+paginate_path: "/posts/page/:num"

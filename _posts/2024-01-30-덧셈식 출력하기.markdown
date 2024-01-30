@@ -1,0 +1,36 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day2-1"
+date: 2024-01-30 09:40:00 +0900
+categories: Javascript
+---
+## 덧셈식 출력하기 😀
+
+두 정수 a, b가 주어질 때 다음과 같은 형태의 계산식을 출력하는 코드를 작성해 보세요.<br>
+a + b = c
+
+※ 제한 사항
+1 ≤ a, b ≤ 100
+
+입력 #1<br>
+4 5<br>
+출력 #1<br>
+4 + 5 = 9
+
+```javascript
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    const a = Number(input[0])
+    const b = Number(input[1])
+    console.log(`${a} + ${b} = ${a + b}`);
+});
+```

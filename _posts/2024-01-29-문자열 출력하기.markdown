@@ -1,22 +1,20 @@
 ---
 layout: post
-title: "문자열 출력하기"
+title: "프로그래머스 기초트레이닝 Day1-1"
 date: 2024-01-29 10:40:00 +0900
 categories: Javascript
 ---
+## 문자열 출력하기 😁
 
 문자열 str이 주어질 때, str을 출력하는 코드를 작성해 보세요.
 
-※ 제한 사항
+※ 제한 사항<br>
 1 ≤ str의 길이 ≤ 1,000,000
 str에는 공백이 없으며, 첫째 줄에 한 줄로만 주어집니다.
 
-### 입력 #1
-
-HelloWorld!
-
-### 출력 #1
-
+입력 #1<br>
+HelloWorld!<br>
+출력 #1<br>
 HelloWorld!
 
 ```javascript
