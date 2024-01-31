@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>프로그래머스 기초트레이닝 Day2-3</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>프로그래머스 기초트레이닝 Day2-3 | Jinho’s Coding</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="프로그래머스 기초트레이닝 Day2-3" />
+<meta name="author" content="GitHub User" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="문자열 돌리기 😀" />
+<meta property="og:description" content="문자열 돌리기 😀" />
+<link rel="canonical" href="http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0.html" />
+<meta property="og:url" content="http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0.html" />
+<meta property="og:site_name" content="Jinho’s Coding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-30T10:30:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="프로그래머스 기초트레이닝 Day2-3" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2024-01-30T10:30:00+09:00","datePublished":"2024-01-30T10:30:00+09:00","description":"문자열 돌리기 😀","headline":"프로그래머스 기초트레이닝 Day2-3","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0.html"},"url":"http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/assets/image01.jpg" alt="Jinho Moon" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">Jinho Moon</a>
+      </h2>
+      </div><p class="tagline">Developer. Designer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/jinhomun" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="mailto:answlsgh95@gmail.com" target="_blank">
+          <li>
+            <i class="icon-mail-alt"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0.html">
+    <h2 class="post-title">프로그래머스 기초트레이닝 Day2-3</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Jan 30, 2024</div><ul class="post-categories"><li>Javascript</li></ul></div>
+  <div class="post">
+    <h3 id="문자열-돌리기-">문자열 돌리기 😀</h3>
+
+<p>문자열 str이 주어집니다.<br />
+문자열을 시계방향으로 90도 돌려서 아래 입출력 예와 같이 출력하는 코드를 작성해 보세요.<br /></p>
+
+<p>※ 제한 사항<br />
+1 ≤ str의 길이 ≤ 10</p>
+
+<p>입력 #1<br />
+abcde<br />
+출력 #1<br />
+a<br />
+b<br />
+c<br />
+d<br />
+e<br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">rl</span> <span class="o">=</span> <span class="nx">readline</span><span class="p">.</span><span class="nf">createInterface</span><span class="p">({</span>
+    <span class="na">input</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">,</span>
+    <span class="na">output</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span>
+<span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">rl</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">line</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">line</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">input</span> <span class="o">=</span> <span class="p">[</span><span class="nx">line</span><span class="p">];</span>
+<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">close</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="c1">// 문자열의 각 문자를 반복하며 출력</span>
+    <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>for (let i = 0; i &lt; str.length; i++): 이 부분은 반복문을 설정합니다. 반복 변수 i를 0부터 시작하여 str.length - 1까지 증가시킵니다.<br />
+str.length는 문자열의 길이이며, 각 문자열의 인덱스는 0부터 시작하므로 마지막 문자의 인덱스는 str.length - 1이 됩니다.<br /></p>
+
+<p>console.log(str[i]);: 반복문 내에서 현재 인덱스 i에 해당하는 문자를 str[i]를 통해 가져와서 console.log()를 사용하여 출력합니다.<br /></p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/jinhomun" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="mailto:answlsgh95@gmail.com" target="_blank">
+          <li>
+            <i class="icon-mail-alt"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>프로그래머스 기초트레이닝 Day2-5</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>프로그래머스 기초트레이닝 Day2-5 | Jinho’s Coding</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="프로그래머스 기초트레이닝 Day2-5" />
+<meta name="author" content="GitHub User" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="문자열 겹쳐쓰기 😀" />
+<meta property="og:description" content="문자열 겹쳐쓰기 😀" />
+<link rel="canonical" href="http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B9%EC%B3%90%EC%93%B0%EA%B8%B0.html" />
+<meta property="og:url" content="http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B9%EC%B3%90%EC%93%B0%EA%B8%B0.html" />
+<meta property="og:site_name" content="Jinho’s Coding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-30T10:55:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="프로그래머스 기초트레이닝 Day2-5" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2024-01-30T10:55:00+09:00","datePublished":"2024-01-30T10:55:00+09:00","description":"문자열 겹쳐쓰기 😀","headline":"프로그래머스 기초트레이닝 Day2-5","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B9%EC%B3%90%EC%93%B0%EA%B8%B0.html"},"url":"http://localhost:4000/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B9%EC%B3%90%EC%93%B0%EA%B8%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/assets/image01.jpg" alt="Jinho Moon" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">Jinho Moon</a>
+      </h2>
+      </div><p class="tagline">Developer. Designer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/jinhomun" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="mailto:answlsgh95@gmail.com" target="_blank">
+          <li>
+            <i class="icon-mail-alt"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/javascript/2024/01/30/%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B9%EC%B3%90%EC%93%B0%EA%B8%B0.html">
+    <h2 class="post-title">프로그래머스 기초트레이닝 Day2-5</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Jan 30, 2024</div><ul class="post-categories"><li>Javascript</li></ul></div>
+  <div class="post">
+    <h3 id="문자열-겹쳐쓰기-">문자열 겹쳐쓰기 😀</h3>
+
+<p>문자열 my_string, overwrite_string과 정수 s가 주어집니다.<br />
+문자열 my_string의 인덱스 s부터 overwrite_string의 길이만큼을 문자열 overwrite_string으로 바꾼 문자열을 return 하는 solution 함수를 작성해 주세요.<br /></p>
+
+<p>※ 제한 사항<br />
+my_string와 overwrite_string은 숫자와 알파벳으로 이루어져 있습니다.<br />
+1 ≤ overwrite_string의 길이 ≤ my_string의 길이 ≤ 1,000<br />
+0 ≤ s ≤ my_string의 길이 - overwrite_string의 길이<br /></p>
+
+<p>입출력 <br />
+my_string :”He11oWor1d”<br />
+overwrite_string:”lloWorl”<br />
+s: 2<br />
+result:”HelloWorld”<br />
+<br />
+my_string:”Program29b8UYP”<br />
+overwrite_string: “merS123”<br />
+s:7<br />
+result:”ProgrammerS123”<br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">my_string</span><span class="p">,</span> <span class="nx">overwrite_string</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+
+    <span class="c1">// 겹쳐쓰기 이전 부분은 그대로 가져오기</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">my_string</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+
+    <span class="c1">// 겹쳐쓰기할 부분 덧붙이기</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">overwrite_string</span><span class="p">;</span>
+
+    <span class="c1">// 겹쳐쓰기 이후 부분은 그대로 가져오기</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">my_string</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">s</span> <span class="o">+</span> <span class="nx">overwrite_string</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 테스트 예시</span>
+<span class="kd">var</span> <span class="nx">result1</span> <span class="o">=</span> <span class="nf">solution</span><span class="p">(</span><span class="dl">"</span><span class="s2">He11oWor1d</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">lloWorl</span><span class="dl">"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span>  <span class="c1">// 출력: "HelloWorld"</span>
+
+<span class="kd">var</span> <span class="nx">result2</span> <span class="o">=</span> <span class="nf">solution</span><span class="p">(</span><span class="dl">"</span><span class="s2">Program29b8UYP</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">merS123</span><span class="dl">"</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span>  <span class="c1">// 출력: "ProgrammerS123"</span>
+</code></pre></div></div>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/jinhomun" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="mailto:answlsgh95@gmail.com" target="_blank">
+          <li>
+            <i class="icon-mail-alt"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>
