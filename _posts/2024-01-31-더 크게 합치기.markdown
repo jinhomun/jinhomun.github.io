@@ -1,0 +1,49 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day3-4"
+date: 2024-01-31 11:00:00 +0900
+categories: Javascript
+---
+### 더 크게 합치기 😀
+
+연산 ⊕는 두 정수에 대한 연산으로 두 정수를 붙여서 쓴 값을 반환합니다. 예를 들면 다음과 같습니다.<br>
+
+12 ⊕ 3 = 123<br>
+3 ⊕ 12 = 312<br>
+
+양의 정수 a와 b가 주어졌을 때, a ⊕ b와 b ⊕ a 중 더 큰 값을 return 하는 solution 함수를 완성해 주세요.<br>
+단, a ⊕ b와 b ⊕ a가 같다면 a ⊕ b를 return 합니다.<br>
+
+※ 제한 사항<br>
+1 ≤ a, b < 10,000<br>
+
+
+
+입출력 <br>
+a: 9<br>
+b: 91<br>
+result: 991<br>
+
+```javascript
+function solution(a, b) {
+    // a ⊕ b 계산
+    const result1 = parseInt(a.toString() + b.toString());
+    
+    // b ⊕ a 계산
+    const result2 = parseInt(b.toString() + a.toString());
+
+    // 더 큰 값을 반환
+    return Math.max(result1, result2);
+}
+```
+const result1 = parseInt(a.toString() + b.toString()):<br>
+첫 번째로, 주어진 정수 a와 b를 문자열로 변환합니다. 그리고 나서 두 문자열을 결합한 후, parseInt 함수를 사용하여 다시 정수로 변환합니다.<br>
+이렇게 하면 a ⊕ b의 값을 얻을 수 있습니다.<br>
+
+const result2 = parseInt(b.toString() + a.toString()):<br>
+두 번째로, b와 a를 문자열로 변환하고, 결합한 후, 다시 정수로 변환합니다.<br>
+이렇게 하면 b ⊕ a의 값을 얻을 수 있습니다.<br>
+
+return Math.max(result1, result2):<br>
+Math.max 함수를 사용하여 두 값 중에서 더 큰 값을 반환합니다.<br>
+이것이 문제에서 원하는 것으로, a ⊕ b와 b ⊕ a 중에서 더 큰 값을 반환합니다.<br>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day3-3"
+date: 2024-01-31 10:40:00 +0900
+categories: Javascript
+---
+### 문자열 곱하기 😀
+
+문자열 my_string과 정수 k가 주어질 때, my_string을 k번 반복한 문자열을 return 하는 solution 함수를 작성해 주세요.<br>
+
+※ 제한 사항<br>
+1 ≤ my_string의 길이 ≤ 100<br>
+my_string은 영소문자로만 이루어져 있습니다.<br>
+1 ≤ k ≤ 100<br>
+
+
+입출력 <br>
+my_string: "string"<br>
+k: 3<br>
+result: "stringstringstring"<br>
+
+```javascript
+function solution(my_string, k) {
+    // 빈 문자열을 저장할 변수 answer 선언
+    var answer = '';
+
+    // 주어진 문자열을 지정된 횟수만큼 반복하여 answer에 추가
+    for (var i = 0; i < k; i++) {
+        answer += my_string; // 각 문자열을 추가
+    }
+
+    // 최종적으로 결합된 문자열을 반환
+    return answer;
+}
+```
+k=3이기 때문에, "stringstringstring"이 출력됩니다.<br>
+ex) k=10이고, my_string:love 이면 "lovelovelovelovelovelovelovelovelovelove"이 출력됩니다.<br>
