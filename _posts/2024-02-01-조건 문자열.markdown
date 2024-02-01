@@ -1,0 +1,56 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day4-4"
+date: 2024-02-01 11:15:00 +0900
+categories: Javascript
+---
+### 조건 문자열 😀
+
+문자열에 따라 다음과 같이 두 수의 크기를 비교하려고 합니다.<br>
+<br>
+두 수가 n과 m이라면<br>
+- ">", "=" : n >= m<br>
+- "<", "=" : n <= m<br>
+- ">", "!" : n > m<br>
+- "<", "!" : n < m<br>
+
+두 문자열 ineq와 eq가 주어집니다. <br>
+ineq는 "<"와 ">"중 하나고, eq는 "="와 "!"중 하나입니다. <br>
+그리고 두 정수 n과 m이 주어질 때, n과 m이 ineq와 eq의 조건에 맞으면 1을 아니면 0을 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+1 ≤ n, m ≤ 100<br>
+
+입출력 <br>
+ineq: "<"<br>
+eq: "="<br>
+n: 20<br>
+m: 50<br>
+result: 1<br>
+
+ineq: ">"<br>
+eq: "!"<br>
+n: 41<br>
+m: 78<br>
+result: 0<br>
+
+```javascript
+function solution(ineq, eq, n, m) {
+    var answer = 0;
+
+    if ((ineq === ">" && eq === "=" && n >= m) ||
+        (ineq === "<" && eq === "=" && n <= m) ||
+        (ineq === ">" && eq === "!" && n > m) ||
+        (ineq === "<" && eq === "!" && n < m)) {
+        answer = 1;
+    }
+
+    return answer;
+}
+```
+만약 ineq가 ">"이고 eq가 "="이면, n이 m 이상이면 1을 반환합니다.<br>
+만약 ineq가 "<"이고 eq가 "="이면, n이 m 이하이면 1을 반환합니다.<br>
+만약 ineq가 ">"이고 eq가 "!"이면, n이 m보다 크면 1을 반환합니다.<br>
+만약 ineq가 "<"이고 eq가 "!"이면, n이 m보다 작으면 1을 반환합니다.<br>
+조건이 어느 하나에도 해당하지 않으면 0을 반환합니다.<br>
+

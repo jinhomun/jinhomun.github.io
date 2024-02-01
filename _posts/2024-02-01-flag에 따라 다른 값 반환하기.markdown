@@ -1,0 +1,37 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day4-5"
+date: 2024-02-01 11:50:00 +0900
+categories: Javascript
+---
+### flag에 따라 다른 값 반환하기 😀
+
+두 정수 a, b와 boolean 변수 flag가 매개변수로 주어질 때, <br>
+flag가 true면 a + b를 false면 a - b를 return 하는 solution 함수를 작성해 주세요.<br>
+
+※ 제한 사항<br>
+-1,000 ≤ a, b ≤ 1,000<br>
+
+
+입출력 <br>
+a: -4<br>
+b: 7<br>
+flag: true<br>
+result: 3<br>
+
+a: -4<br>
+b: 7<br>
+flag: false<br>
+result: -11<br>
+
+```javascript
+function solution(a, b, flag) {
+    if(flag === true) {
+        return (a+b);
+    }else {
+        return(a-b);
+    }
+}
+```
+flag === true일때는 a+b 하고, true가 아닐때는 a-b를 합니다.
+

@@ -1,0 +1,33 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day4-2"
+date: 2024-02-01 10:30:00 +0900
+categories: Javascript
+---
+### 공배수 😀
+
+정수 number와 n, m이 주어집니다.<br>
+number가 n의 배수이면서 m의 배수이면 1을 아니라면 0을 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+10 ≤ number ≤ 100<br>
+2 ≤ n, m < 10<br>
+
+입출력 <br>
+number: 60<br>
+n: 2<br>
+m: 3 <br>
+result: 1 <br>
+
+number: 55<br>
+n: 10<br>
+m: 5 <br>
+result: 0 <br>
+
+```javascript
+function solution(number, n, m) {
+     return (number % n == 0 && number % m == 0 ) ? 1 : 0;
+}
+```
+&& = 논리 AND 연산자로, JavaScript에서 두 개의 피연산자가 모두 참일 때만 전체 표현식이 참이 되도록 하는 역할을 합니다.
+

@@ -1,0 +1,29 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day4-1"
+date: 2024-02-01 10:00:00 +0900
+categories: Javascript
+---
+### n의 배수 😀
+
+정수 num과 n이 매개 변수로 주어질 때, num이 n의 배수이면 1을 return n의 배수가 아니라면 0을 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+2 ≤ num ≤ 100<br>
+2 ≤ n ≤ 9<br>
+
+입출력 <br>
+num: 98<br>
+n: 2 <br>
+result: 1<br>
+
+num: 34<br>
+n: 3 <br>
+result: 0<br>
+
+```javascript
+function solution(num, n) {
+    return (num % n == 0) ? 1 : 0;
+}
+
+```
