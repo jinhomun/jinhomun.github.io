@@ -1,0 +1,30 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day7-3"
+date: 2024-02-04 14:00:00 +0900
+categories: Javascript
+---
+
+### 카운트 업😀
+
+정수 start_num와 end_num가 주어질 때, start_num부터 end_num까지의 숫자를 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+0 ≤ start_num ≤ end_num ≤ 50<br>
+
+입출력 <br>
+|start_num| end_num|result|
+|:---:|:---:|:---:|
+|3|10|[3, 4, 5, 6, 7, 8, 9, 10]|
+
+```javascript
+function solution(start_num, end_num) {
+  var answer = [];
+
+  for (var i = start_num; i <= end_num; i++) {
+    answer.push(i);
+  }
+
+  return answer;
+}
+```

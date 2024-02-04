@@ -4,32 +4,74 @@ title: "프로그래머스 기초트레이닝 Day5-1"
 date: 2024-02-02 10:00:00 +0900
 categories: Javascript
 ---
+
 ### 코드처리하기 😀
 
-양의 정수 n이 매개변수로 주어질 때, <br>
-n이 홀수라면 n 이하의 홀수인 모든 양의 정수의 합을 return 하고 <br>
-n이 짝수라면 n 이하의 짝수인 모든 양의 정수의 제곱의 합을 return 하는 solution 함수를 작성해 주세요<br>
+문자열 code가 주어집니다.<br>
+code를 앞에서부터 읽으면서 만약 문자가 "1"이면 mode를 바꿉니다. mode에 따라 code를 읽어가면서 문자열 ret을 만들어냅니다.<br>
+
+mode는 0과 1이 있으며, idx를 0 부터 code의 길이 - 1 까지 1씩 키워나가면서 code[idx]의 값에 따라 다음과 같이 행동합니다.<br>
+
+mode가 0일 때<br>
+code[idx]가 "1"이 아니면 idx가 짝수일 때만 ret의 맨 뒤에 code[idx]를 추가합니다.<br>
+code[idx]가 "1"이면 mode를 0에서 1로 바꿉니다.<br>
+mode가 1일 때<br>
+code[idx]가 "1"이 아니면 idx가 홀수일 때만 ret의 맨 뒤에 code[idx]를 추가합니다.<br>
+code[idx]가 "1"이면 mode를 1에서 0으로 바꿉니다.<br>
+문자열 code를 통해 만들어진 문자열 ret를 return 하는 solution 함수를 완성해 주세요.<br>
+
+단, 시작할 때 mode는 0이며, return 하려는 ret가 만약 빈 문자열이라면 대신 "EMPTY"를 return 합니다.<br>
 
 ※ 제한 사항<br>
-1 ≤ n ≤ 100<br>
+1 ≤ code의 길이 ≤ 100,000<br>
+code는 알파벳 소문자 또는 "1"로 이루어진 문자열입니다.<br>
 
-입출력 <br>
-n: 7<br>
-result: 16<br>
+입출력 예<br>
 
-n: 10<br>
-result: 220<br>
+code의 각 인덱스 i에 따라 다음과 같이 mode와 ret가 변합니다.<br>
+|i|code[i]|node|ret|
+|:---:|:---:|:---:|:---:|
+|0|"a"|0|"a"|
+|1|"b"|0|"a"|
+|2|"c"|0|"ac"|
+|3|"1"|1|"ac"|
+|4|"a"|1|"ac"|
+|5|"b"|1|"acb"|
+|6|"c"|1|"acb"|
+|7|"1"|0|"acb"|
+|8|"a"|0|"acba"|
+|9|"b"|0|"acba"|
+|10|"c"|0|"acbac"|
 
 ```javascript
-function solution(a, b, flag) {
-    if(flag === true) {
-        return (a+b);
-    }else {
-        return(a-b);
+function solution(code) {
+  var answer = "";
+  var mode = 0;
+
+  for (var idx = 0; idx < code.length; idx++) {
+    if (mode === 0) {
+      if (code[idx] !== "1") {
+        if (idx % 2 === 0) {
+          answer += code[idx];
+        }
+      } else {
+        mode = 1;
+      }
+    } else {
+      if (code[idx] !== "1") {
+        if (idx % 2 === 1) {
+          answer += code[idx];
+        }
+      } else {
+        mode = 0;
+      }
     }
+  }
+
+  if (answer === "") {
+    return "EMPTY";
+  }
+
+  return answer;
 }
 ```
-for (let i = 2; i <= n; i += 2 ) -> i의 값이 2에서  +2 더하기 때문에 짝수를 의미하고<br>
-sum += i * i; -> 2 x 2 = 4 , 4 x 4 = 16 ...짝수의 제곱을 더하는것을 의미합니다.<br>
-for (let i = 1; i <= n; i += 2) -> i의 값이 1에서 +2 더하기 때문에 홀수를 의미하고<br>
-um += i; -> 1+3+5+7... 홀수를 더하는것을 의미합니다.
