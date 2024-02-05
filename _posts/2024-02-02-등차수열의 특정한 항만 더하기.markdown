@@ -18,10 +18,13 @@ categories: Javascript
 included에는 true가 적어도 하나 존재합니다.<br>
 
 입출력 <br>
-|a|d|included|result|
-|:---:|:---:|:---:|:---:|
-|3|4|[true, false, false, true, true]|37|
-|7| 1|[false, false, false, true, false, false, false]|10|
+
+| a | d | included | result |
+|---|---|-----------|--------|
+| 3 | 4 |[true, false, false, true, true]| 37 |
+| 7 | 1 |[false, false, false, true, false, false, false]|10|
+
+<br>
 
 ```javascript
 function solution(a, d, included) {

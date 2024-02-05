@@ -1,0 +1,59 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day8-5"
+date: 2024-02-05 14:30:00 +0900
+categories: Javascript
+---
+
+### 문자열 여러 번 뒤집기 😀
+
+문자열 my_string과 이차원 정수 배열 queries가 매개변수로 주어집니다.<br>
+ queries의 원소는 [s, e] 형태로, my_string의 인덱스 s부터 인덱스 e까지를 뒤집으라는 의미입니다.<br>
+ my_string에 queries의 명령을 순서대로 처리한 후의 문자열을 return 하는 solution 함수를 작성해 주세요.<br>
+
+※ 제한 사항<br>
+my_string은 영소문자로만 이루어져 있습니다.<br>
+1 ≤ my_string의 길이 ≤ 1,000<br>
+queries의 원소는 [s, e]의 형태로 0 ≤ s ≤ e < my_string의 길이를 만족합니다.<br>
+1 ≤ queries의 길이 ≤ 1,000<br>
+
+입출력 <br>
+
+|my_string|queries|result|
+|:---:|:---:|:---:|
+|"rermgorpsam"|[[2, 3], [0, 7], [5, 9], [6, 10]]|"programmers"|
+
+<br>
+
+```javascript
+function solution(my_string, queries) {
+    for (let i = 0; i < queries.length; i++) {
+        const [start, end] = queries[i];
+        const substringToReverse = my_string.substring(start, end + 1);
+        const reversedSubstring = substringToReverse.split('').reverse().join('');
+        
+        my_string = my_string.substring(0, start) + reversedSubstring + my_string.substring(end + 1);
+    }
+
+    return my_string;
+}
+```
+첫 번째 쿼리: [2, 3]<br>
+"rermgorpsam"에서 인덱스 2부터 3까지의 부분 문자열은 "rm"입니다.<br>
+이 부분 문자열을 뒤집으면 "mr"이 되고, 이를 다시 원래 문자열에 적용합니다.<br>
+결과: "remrgorpsam"<br>
+
+두 번째 쿼리: [0, 7]<br>
+"remrgorpsam"에서 인덱스 0부터 7까지의 부분 문자열은 "remrgorp"입니다.<br>
+이 부분 문자열을 뒤집으면 "progrmer"가 되고, 이를 다시 원래 문자열에 적용합니다.<br>
+결과: "progrmersam"<br>
+
+세 번째 쿼리: [5, 9]<br>
+"progrmersam"에서 인덱스 5부터 9까지의 부분 문자열은 "mersa"입니다.<br>
+이 부분 문자열을 뒤집으면 "asrem"가 되고, 이를 다시 원래 문자열에 적용합니다.<br>
+결과: "prograsremm"<br>
+
+네 번째 쿼리: [6, 10]<br>
+"prograsremm"에서 인덱스 6부터 10까지의 부분 문자열은 "sremm"입니다.<br>
+이 부분 문자열을 뒤집으면 "mmers"가 되고, 이를 다시 원래 문자열에 적용합니다.<br>
+결과: "programmers"<br>

@@ -16,10 +16,13 @@ categories: Javascript
 1 ≤ num_list의 원소 ≤ 9<br>
 
 입출력 <br>
+
 |num\_\_list|result|
 |:---:|:---:|
 |[2, 1, 6]|[2, 1, 6, 5]|
 |[5, 2, 1, 7, 5]|[5, 2, 1, 7, 5, 10]|
+
+<br>
 
 ```javascript
 function solution(num_list) {

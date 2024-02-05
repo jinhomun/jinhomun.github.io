@@ -19,9 +19,12 @@ stk에 원소가 있는데 stk의 마지막 원소가 arr[i]보다 크거나 같
 1 ≤ arr의 원소 ≤ 100,000<br>
 
 입출력 <br>
+
 |arr|result|
 |:---:|:---:|
 |[1, 4, 2, 5, 3]|[1, 2, 3]|
+
+<br>
 
 ```javascript
 function solution(arr) {

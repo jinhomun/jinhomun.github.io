@@ -21,9 +21,12 @@ queries의 원소는 각각 하나의 query를 나타내며, [s, e, k] 꼴입니
 0 ≤ k ≤ 1,000,000<br>
 
 입출력 <br>
+
 |arr| queries|result|
 |:---:|:---:|:---:|
 |[0, 1, 2, 4, 3]|[[0, 4, 2],[0, 3, 2],[0, 2, 2]]|[3, 4, -1]|
+
+<br>
 
 ```javascript
 function solution(arr, queries) {

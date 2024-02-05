@@ -1,0 +1,44 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day8-3"
+date: 2024-02-05 12:30:00 +0900
+categories: Javascript
+---
+
+### 글자 이어 붙여 문자열 만들기 😀
+
+문자열 my_string과 정수 배열 index_list가 매개변수로 주어집니다. 
+my_string의 index_list의 원소들에 해당하는 인덱스의 글자들을 순서대로 이어 붙인 문자열을 return 하는 solution 함수를 작성해 주세요.<br>
+
+※ 제한 사항<br>
+1 ≤ my_string의 길이 ≤ 1,000<br>
+my_string의 원소는 영소문자로 이루어져 있습니다.<br>
+1 ≤ index_list의 길이 ≤ 1,000<br>
+0 ≤ index_list의 원소 < my_string의 길이<br>
+
+입출력 <br>
+
+|my_string|index_list|result|
+|:---:|:---:|:---:|
+|"cvsgiorszzzmrpaqpe"|[16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7]|"programmers"|
+|"zpiaz"|[1, 2, 0, 0, 3]|"pizza"|
+
+<br>
+
+```javascript
+function solution(my_string, index_list) {
+    var answer = '';
+
+    // index_list에 따라 문자열을 순서대로 이어 붙임
+    index_list.forEach(index => {
+        answer += my_string[index];
+    });
+
+    return answer;
+}
+```
+index_list.forEach(index => { ... });: forEach 함수를 사용하여 index_list 배열을 순회합니다. <br>
+각 원소에 대해 주어진 콜백 함수를 실행합니다. <br>
+여기서 index는 현재 순회 중인 원소를 나타냅니다.<br>
+answer += my_string[index];: 현재 순회 중인 index에 해당하는 my_string의 글자를 answer에 추가합니다. <br>
+이 부분은 문자열을 순서대로 이어 붙이는 역할을 합니다.<br>

@@ -25,9 +25,12 @@ categories: Javascript
 1 ≤ i ≤ numLog의 길이인 모든 i에 대해 |numLog[i] - numLog[i - 1]|의 값은 1 또는 10입니다.<br>
 
 입출력 <br>
+
 |numLog|result|
 |:---:|:---:|
 |[0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]|"wsdawsdassw"|
+
+<br>
 
 ```javascript
 function solution(numLog) {

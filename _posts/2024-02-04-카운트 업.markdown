@@ -13,10 +13,12 @@ categories: Javascript
 0 ≤ start_num ≤ end_num ≤ 50<br>
 
 입출력 <br>
+
 |start_num| end_num|result|
 |:---:|:---:|:---:|
 |3|10|[3, 4, 5, 6, 7, 8, 9, 10]|
 
+<br>
 ```javascript
 function solution(start_num, end_num) {
   var answer = [];

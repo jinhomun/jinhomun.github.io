@@ -33,9 +33,25 @@ video {
 a {
   color: #000;
   transition: color 0.3s;
+  font-size: 20px;
+  text-decoration: none;
 
   &:hover {
     color: $linkColor;
+  }
+}
+
+em {
+  font-style: normal;
+  font-size: 20px;
+  color: #b00a0a;
+}
+
+.pagination {
+  padding-left: 40px;
+
+  span {
+    font-size: 20px;
   }
 }
 

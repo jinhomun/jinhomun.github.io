@@ -1,0 +1,42 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day8-4"
+date: 2024-02-05 13:00:00 +0900
+categories: Javascript
+---
+
+### 9로 나눈 나머지 😀
+
+음이 아닌 정수를 9로 나눈 나머지는 그 정수의 각 자리 숫자의 합을 9로 나눈 나머지와 같은 것이 알려져 있습니다.<br>
+이 사실을 이용하여 음이 아닌 정수가 문자열 number로 주어질 때, 이 정수를 9로 나눈 나머지를 return 하는 solution 함수를 작성해주세요.<br>
+
+※ 제한 사항<br>
+1 ≤ number의 길이 ≤ 100,000<br>
+number의 원소는 숫자로만 이루어져 있습니다.<br>
+number는 정수 0이 아니라면 숫자 '0'으로 시작하지 않습니다.<br>
+
+입출력 <br>
+
+|number|result|
+|:---:|:---:|
+|"123"|6|
+|"78720646226947352489"|2|
+
+<br>
+
+```javascript
+function solution(number) {
+    var sumOfDigits = 0;
+
+    // 각 자리 숫자의 합을 구함
+    for (let i = 0; i < number.length; i++) {
+        sumOfDigits += parseInt(number[i]);
+    }
+
+    // 각 자리 숫자의 합을 9로 나눈 나머지를 반환
+    return sumOfDigits % 9;
+}
+```
+
+parseInt(number[i])는 JavaScript에서 사용되는 함수인 parseInt를 의미합니다.<br>
+이 함수는 문자열을 정수로 변환하는 데 사용됩니다.<br>

@@ -16,9 +16,12 @@ categories: Javascript
 1 ≤ n ≤ 1,000<br>
 
 입출력 <br>
+
 |n|result|
 |:---:|:---:|
 |10|[10, 5, 16, 8, 4, 2, 1]|
+
+<br>
 
 ```javascript
 function solution(n) {
