@@ -1,0 +1,40 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day10-3"
+date: 2024-02-07 14:00:00 +0900
+categories: Javascript
+---
+
+### 문자열 뒤집기😀
+
+문자열 my_string과 정수 s, e가 매개변수로 주어질 때,<br>
+my_string에서 인덱스 s부터 인덱스 e까지를 뒤집은 문자열을 return 하는 solution 함수를 작성해 주세요.<br>
+
+※ 제한 사항<br>
+my_string은 숫자와 알파벳으로만 이루어져 있습니다.<br>
+1 ≤ my_string의 길이 ≤ 1,000<br>
+0 ≤ s ≤ e < my_string의 길이<br>
+
+입출력 <br>
+
+|     my_string     |  s  |  e  |      result       |
+| :---------------: | :-: | :-: | :---------------: |
+| "Progra21Sremm3"  |  6  | 12  | "ProgrammerS123"  |
+| "Stanley1yelnatS" |  4  | 10  | "Stanley1yelnatS" |
+
+<br>
+
+```javascript
+function solution(my_string, s, e) {
+  var prefix = my_string.slice(0, s); // 시작 인덱스 이전 부분
+  var reversedSubstring = my_string
+    .slice(s, e + 1)
+    .split("")
+    .reverse()
+    .join(""); // 뒤집은 부분
+  var suffix = my_string.slice(e + 1); // 종료 인덱스 이후 부분
+
+  var answer = prefix + reversedSubstring + suffix;
+  return answer;
+}
+```

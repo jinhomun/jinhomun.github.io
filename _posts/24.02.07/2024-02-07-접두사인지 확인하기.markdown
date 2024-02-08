@@ -1,0 +1,42 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day10-2"
+date: 2024-02-07 13:30:00 +0900
+categories: Javascript
+---
+
+### 접두사인지 확인하기 😀
+
+어떤 문자열에 대해서 접두사는 특정 인덱스까지의 문자열을 의미합니다.<br>
+예를 들어, "banana"의 모든 접두사는 "b", "ba", "ban", "bana", "banan", "banana"입니다.<br>
+문자열 my_string과 is_prefix가 주어질 때,<br>
+is_prefix가 my_string의 접두사라면 1을, 아니면 0을 return 하는 solution 함수를 작성해 주세요.<br>
+
+※ 제한 사항<br>
+1 ≤ my_string의 길이 ≤ 100<br>
+1 ≤ is_prefix의 길이 ≤ 100<br>
+my_string과 is_prefix는 영소문자로만 이루어져 있습니다.<br>
+
+입출력 <br>
+
+| my_string | is_suffix | result |
+| :-------: | :-------: | :----: |
+| "banana"  |   "ban"   |   1    |
+| "banana"  |   "nan"   |   0    |
+| "banana"  |  "abcd"   |   0    |
+| "banana"  | "bananan" |   0    |
+
+<br>
+
+```javascript
+function solution(my_string, is_suffix) {
+  var answer = 0;
+  for (let i = 0; i < my_string.length; i++) {
+    if (my_string.slice(0, i) === is_suffix) {
+      answer = 1;
+      break;
+    }
+  }
+  return answer;
+}
+```
