@@ -27,5 +27,15 @@ finished[i]는 true 또는 false이고 true는 todo_list[i]를 마쳤음을, fal
 <br>
 
 ```javascript
+function solution(todo_list, finished) {
+  var answer = [];
 
+  for (var i = 0; i < todo_list.length; i++) {
+    if (!finished[i]) {
+      answer.push(todo_list[i]);
+    }
+  }
+
+  return answer;
+}
 ```

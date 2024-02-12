@@ -1,0 +1,30 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day15-5"
+date: 2024-02-12 15:00:00 +0900
+categories: Javascript
+---
+
+### 원하는 문자열 찾기 😀
+
+알파벳으로 이루어진 문자열 myString과 pat이 주어집니다. <br>myString의 연속된 부분 문자열 중 pat이 존재하면 1을 그렇지 않으면 0을 return 하는 solution 함수를 완성해 주세요.<br>
+
+단, 알파벳 대문자와 소문자는 구분하지 않습니다.<br>
+
+※ 제한 사항<br>
+1 ≤ myString의 길이 ≤ 100,000<br>
+1 ≤ pat의 길이 ≤ 300<br>
+myString과 pat은 모두 알파벳으로 이루어진 문자열입니다.<br>
+
+입출력 <br>
+
+| myString  |   pat   | return |
+| :-------: | :-----: | :----: |
+| "AbCdEfG" |  "aBc"  |   1    |
+|  "aaAA"   | "aaaaa" |   0    |
+
+<br>
+
+```javascript
+
+```

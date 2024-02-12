@@ -1,0 +1,52 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day15-3"
+date: 2024-02-12 14:00:00 +0900
+categories: Javascript
+---
+
+### 1로 만들기😀
+
+정수가 있을 때, 짝수라면 반으로 나누고, 홀수라면 1을 뺀 뒤 반으로 나누면, 마지막엔 1이 됩니다. 예를 들어 10이 있다면 다음과 같은 과정으로 1이 됩니다.<br>
+10 / 2 = 5<br>
+(5 - 1) / 2 = 4<br>
+4 / 2 = 2<br>
+2 / 2 = 1<br>
+위와 같이 4번의 나누기 연산으로 1이 되었습니다.<br>
+정수들이 담긴 리스트 num_list가 주어질 때, num_list의 모든 원소를 1로 만들기 위해서 필요한 나누기 연산의 횟수를 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+3 ≤ num_list의 길이 ≤ 15<br>
+1 ≤ num_list의 원소 ≤ 30<br>
+
+입출력 <br>
+
+|      num_list      | result |
+| :----------------: | :----: |
+| [12, 4, 15, 1, 14] |   11   |
+
+<br>
+
+```javascript
+function solution(num_list) {
+  var answer = 0;
+
+  for (var i = 0; i < num_list.length; i++) {
+    var num = num_list[i];
+
+    while (num !== 1) {
+      if (num % 2 === 0) {
+        // 짝수인 경우 반으로 나누기
+        num /= 2;
+      } else {
+        // 홀수인 경우 1을 빼고 반으로 나누기
+        num = (num - 1) / 2;
+      }
+
+      answer++;
+    }
+  }
+
+  return answer;
+}
+```

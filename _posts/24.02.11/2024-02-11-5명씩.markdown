@@ -25,5 +25,13 @@ names의 원소는 영어 알파벳 소문자로만 이루어져 있습니다.<b
 <br>
 
 ```javascript
+function solution(names) {
+  var answer = [];
 
+  for (var i = 0; i < names.length; i += 5) {
+    answer.push(names[i]);
+  }
+
+  return answer;
+}
 ```

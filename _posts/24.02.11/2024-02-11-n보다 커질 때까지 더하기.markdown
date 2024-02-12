@@ -25,5 +25,17 @@ numbers의 원소를 앞에서부터 하나씩 더하다가 그 합이 n보다 �
 <br>
 
 ```javascript
+function solution(numbers, n) {
+  var sum = 0;
 
+  for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+
+    if (sum > n) {
+      break;
+    }
+  }
+
+  return sum;
+}
 ```
