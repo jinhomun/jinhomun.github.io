@@ -23,5 +23,8 @@ myString은 알파벳으로 이루어진 문자열입니다.<br>
 <br>
 
 ```javascript
-
+function solution(myString) {
+  var answer = myString.toUpperCase();
+  return answer;
+}
 ```

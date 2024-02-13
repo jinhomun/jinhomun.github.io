@@ -23,5 +23,12 @@ myString은 알파벳으로 이루어진 문자열입니다.<br>
 <br>
 
 ```javascript
+function solution(myString) {
+  return [...myString.toLowerCase()].reduce((result, index) => {
+    if (index === "a") result += "A";
+    else result += index;
 
+    return result;
+  }, "");
+}
 ```

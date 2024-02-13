@@ -22,5 +22,19 @@ categories: Javascript
 <br>
 
 ```javascript
+function solution(my_string, alp) {
+  var answer = "";
 
+  for (var i = 0; i < my_string.length; i++) {
+    var currentChar = my_string[i];
+
+    if (currentChar === alp) {
+      answer += currentChar.toUpperCase();
+    } else {
+      answer += currentChar;
+    }
+  }
+
+  return answer;
+}
 ```
