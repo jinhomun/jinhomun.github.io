@@ -1,0 +1,40 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day17-2"
+date: 2024-02-14 12:30:00 +0900
+categories: Javascript
+---
+
+### 문자열이 몇 번 등장하는지 세기 😀
+
+문자열 myString과 pat이 주어집니다.<br> myString에서 pat이 등장하는 횟수를 return 하는 solution 함수를 완성해 주세요.<br>
+
+※ 제한 사항<br>
+1 ≤ myString ≤ 1000<br>
+1 ≤ pat ≤ 10<br>
+
+입출력 <br>
+
+| myString  | pat| result   |
+| :-------: | :-------: |:-------: |
+| "banana" | "ana"|"ABCDEFG" |
+|   "aaaa"  | "aa"|  "AAA"   |
+
+<br>
+
+```javascript
+function solution(myString, pat) {
+    var answer = 0;
+
+    // 문자열을 처음부터 끝까지 순회하면서 pat이 등장하는 횟수를 계산
+    for (var i = 0; i <= myString.length - pat.length; i++) {
+        var currentSubstring = myString.substring(i, i + pat.length);
+        if (currentSubstring === pat) {
+            answer++;
+        }
+    }
+
+    return answer;
+}
+
+```
