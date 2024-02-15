@@ -1,0 +1,41 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day18-4"
+date: 2024-02-15 13:30:00 +0900
+categories: Javascript
+---
+
+### 문자열 바꿔서 찾기😀
+
+문자 "A"와 "B"로 이루어진 문자열 myString과 pat가 주어집니다.<br> myString의 "A"를 "B"로, "B"를 "A"로 바꾼 문자열의 연속하는 부분 문자열 중 pat이 있으면 1을 아니면 0을 return 하는 solution 함수를 완성하세요.<br>
+
+※ 제한 사항<br>
+1 ≤ myString의 길이 ≤ 100<br>
+1 ≤ pat의 길이 ≤ 10<br>
+myString과 pat는 문자 "A"와 "B"로만 이루어진 문자열입니다.<br>
+
+입출력 <br>
+
+| myString  |	pat|  result   |
+| :-------: | :-------: |:-------: |
+|"ABBAA"	| 	"AABB"|	1 |
+|  "ABAB"  |"ABAB"	|   0  |
+
+<br>
+
+```javascript
+function solution(myString, pat) {
+    let str = '';
+    for(let i in myString){
+        str += (myString[i] === 'A' ? 'B' : 'A')
+    }    
+    return str.includes(pat) ? 1 : 0
+}
+```
+let str = '';: 빈 문자열 str을 초기화합니다. 이 변수에 새로운 문자열을 생성하여 저장할 것입니다.<br>
+<br>
+for(let i in myString): 입력 문자열 myString을 순회합니다. for...in 루프는 객체의 프로퍼티를 반복할 때 사용됩니다. 여기서는 문자열의 각 문자에 대해 반복합니다.<br>
+
+str += (myString[i] === 'A' ? 'B' : 'A'): 현재 문자가 'A'이면 'B'로, 'A'가 아니면 'A'로 변환하여 str에 추가합니다. 이 부분은 삼항 연산자를 사용한 간단한 표현식입니다.<br>
+
+return str.includes(pat) ? 1 : 0: 변환된 문자열 str에 pat이 존재하는지 확인하고, 있으면 1을 반환하고, 없으면 0을 반환합니다.<br>

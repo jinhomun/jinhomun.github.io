@@ -1,0 +1,46 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day18-2"
+date: 2024-02-15 12:30:00 +0900
+categories: Javascript
+---
+
+### 문자열 잘라서 정렬하기😀
+
+문자열 myString이 주어집니다. <br>"x"를 기준으로 해당 문자열을 잘라내 배열을 만든 후 사전순으로 정렬한 배열을 return 하는 solution 함수를 완성해 주세요.
+
+단, 빈 문자열은 반환할 배열에 넣지 않습니다.<br>
+
+※ 제한 사항<br>
+1 ≤ myString ≤ 100,000<br>
+myString은 알파벳 소문자로 이루어진 문자열입니다.<br>
+
+입출력 <br>
+
+| myString  |	  result   |
+| :-------: | :-------: |
+| "axbxcxdx"| ["a","b","c","d"] |
+|   "dxccxbbbxaaaa"  |["aaaa","bbb","cc","d"]  |
+
+<br>
+
+```javascript
+function solution(myString) {
+    var answer = [];
+
+    // 문자열을 "x"를 기준으로 나누기
+    var splitStrings = myString.split("x");
+
+    // 빈 문자열이 아닌 부분만을 배열에 저장
+    for (var i = 0; i < splitStrings.length; i++) {
+        if (splitStrings[i] !== "") {
+            answer.push(splitStrings[i]);
+        }
+    }
+
+    // 사전순으로 정렬
+    answer.sort();
+
+    return answer;
+}
+```
