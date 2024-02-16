@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "프로그래머스 기초트레이닝 Day17-4"
-date: 2024-02-13 13:30:00 +0900
+date: 2024-02-14 13:30:00 +0900
 categories: Javascript
 ---
 

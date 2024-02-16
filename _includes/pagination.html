@@ -7,20 +7,29 @@
   <span>&laquo; 이전</span>
   {% endif %}
 
-  {% for page in (1..paginator.total_pages) %}
-  {% if page == paginator.page %}
-  <em>{{ page }}</em>
-  {% elsif page == 1 %}
-  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-  {% else %}
-  <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-  {% endif %}
-  {% endfor %}
+  {% assign start_page = paginator.page | minus: 2 %}
+  {% assign end_page = paginator.page | plus: 2 %}
+  {% if start_page < 1 %} {% assign start_page=1 %} {% assign end_page=5 %} {% endif %} {% if end_page>
+    paginator.total_pages %}
+    {% assign start_page = paginator.total_pages | minus: 4 %}
+    {% assign end_page = paginator.total_pages %}
+    {% endif %}
 
-  {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">다음 &raquo;</a>
-  {% else %}
-  <span>다음 &raquo;</span>
-  {% endif %}
+    {% for page in (start_page..end_page) %}
+    {% if page == paginator.page %}
+    <em>{{ page }}</em>
+    {% elsif page == 1 %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page
+      }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">다음 &raquo;</a>
+    {% else %}
+    <span>다음 &raquo;</span>
+    {% endif %}
 </div>
 {% endif %}

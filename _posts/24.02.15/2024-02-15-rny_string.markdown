@@ -21,6 +21,7 @@ rny_string은 영소문자로만 이루어져 있습니다.<br>
 |  "programmers" |"prograrnrners"  |
 |  "jerry" |	"jerry"|
 |  "burn" |"burn" |
+
 <br>
 
 ```javascript

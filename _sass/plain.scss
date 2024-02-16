@@ -48,10 +48,33 @@ em {
 }
 
 .pagination {
-  padding-left: 40px;
+  // padding-left: 40px;
 
   span {
     font-size: 20px;
+    border: 1px solid #000;
+    padding: 5px;
+  }
+
+  a {
+    color: #000;
+    transition: color 0.3s;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid #000;
+    padding: 5px;
+
+    &:hover {
+      color: $linkColor;
+    }
+  }
+
+  em {
+    font-style: normal;
+    font-size: 20px;
+    color: #b00a0a;
+    border: 1px solid #000;
+    padding: 5px;
   }
 }
 
