@@ -1,0 +1,35 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day22-3"
+date: 2024-02-19 12:20:00 +0900
+categories: Javascript
+---
+
+### 뒤에서 5등 위로😀
+
+정수로 이루어진 리스트 num_list가 주어집니다.<br>
+num_list에서 가장 작은 5개의 수를 제외한 수들을 오름차순으로 담은 리스트를 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+6 ≤ num_list의 길이 ≤ 30<br>
+1 ≤ num_list의 원소 ≤ 100<br>
+
+입출력 <br>
+
+|                num_list                |        result        |
+| :------------------------------------: | :------------------: |
+| [12, 4, 15, 46, 38, 1, 14, 56, 32, 10] | [15, 32, 38, 46, 56] |
+
+<br>
+
+```javascript
+function solution(num_list) {
+  return num_list.sort((a, b) => a - b).slice(5, num_list.length);
+}
+```
+
+num_list를 sort 메소드를 사용하여 오름차순으로 정렬합니다.<br>
+정렬 기준은 (a, b) => a - b로, 이는 숫자를 비교하여 작은 순서대로 정렬하도록 합니다.<br>
+slice(5, num_list.length)를 사용하여 정렬된 리스트에서 처음 5개의 원소를 제외한 부분을 선택합니다.<br>
+이 부분은 5번째 인덱스부터 리스트의 끝까지의 원소들로 이루어집니다.<br>
+최종적으로 선택된 부분으로 이루어진 리스트를 반환합니다.<br>

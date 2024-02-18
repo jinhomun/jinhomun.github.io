@@ -1,0 +1,43 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day21-4"
+date: 2024-02-18 12:30:00 +0900
+categories: Javascript
+---
+
+### 문자열 정수의 합😀
+
+한 자리 정수로 이루어진 문자열 num_str이 주어질 때, 각 자리수의 합을 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+3 ≤ num_str ≤ 100<br>
+
+입출력 <br>
+
+|   num_str   | result |
+| :---------: | :----: |
+| "123456789" |   45   |
+|  "1000000"  |   1    |
+
+<br>
+
+```javascript
+function solution(num_str) {
+  var answer = 0;
+
+  // 문자열을 순회하면서 각 자리수의 합을 더함
+  for (let i = 0; i < num_str.length; i++) {
+    answer += parseInt(num_str[i], 10);
+  }
+
+  return answer;
+}
+```
+
+var answer = 0;: 결과를 저장할 변수 answer를 초기화합니다.<br>
+for (let i = 0; i < num_str.length; i++) { ... }: 문자열을 순회하는 반복문을 사용하여 각 자리의 숫자를 처리합니다.<br>
+num_str[i]: 현재 자리에 해당하는 문자를 가져옵니다.<br>
+parseInt(num_str[i], 10): 가져온 문자를 10진수 정수로 변환합니다.<br>
+answer += ...: 변환된 정수를 기존의 결과에 더합니다.<br>
+계산된 결과를 answer에 저장하고, 최종적으로 반환합니다.<br>
+즉, 함수는 주어진 문자열의 각 자리수를 정수로 변환하여 더한 값을 반환합니다.<br>

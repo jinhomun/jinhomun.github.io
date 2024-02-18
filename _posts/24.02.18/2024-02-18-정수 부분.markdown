@@ -1,0 +1,33 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day21-3"
+date: 2024-02-18 12:20:00 +0900
+categories: Javascript
+---
+
+### 정수 부분😀
+
+실수 flo가 매개 변수로 주어질 때, flo의 정수 부분을 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+0 ≤ flo ≤ 100<br>
+
+입출력 <br>
+
+|  flo  | result |
+| :---: | :----: |
+| 1.42  |   1    |
+| 69.32 |   69   |
+
+<br>
+
+```javascript
+function solution(flo) {
+  var answer = Math.floor(flo);
+  return answer;
+}
+```
+
+Math.floor(flo): Math.floor 함수를 사용하여 flo의 소수 부분을 버리고 남은 정수 부분을 계산합니다.<br>
+이를 answer에 저장하고, 최종적으로 answer를 반환합니다.<br>
+즉, 함수는 입력으로 받은 실수의 정수 부분을 계산하여 반환합니다.<br>
