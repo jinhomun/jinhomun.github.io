@@ -1,0 +1,50 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day23-3"
+date: 2024-02-20 12:20:00 +0900
+categories: Javascript
+---
+
+### 정수 찾기😀
+
+정수 리스트 num_list와 찾으려는 정수 n이 주어질 때, num_list안에 n이 있으면 1을 없으면 0을 return하도록 solution 함수를 완성해주세요.
+<br>
+
+※ 제한 사항<br>
+3 ≤ num_list의 길이 ≤ 100<br>
+1 ≤ num_list의 원소 ≤ 100<br>
+1 ≤ n ≤ 100<br>
+
+입출력 <br>
+
+|      num_list       |  n  | result |
+| :-----------------: | :-: | ------ |
+|   [1, 2, 3, 4, 5]   |  3  | 1      |
+| [15, 98, 23, 2, 15] | 20  | 0      |
+
+<br>
+
+```javascript
+function solution(num_list, n) {
+  var answer = 0;
+
+  // num_list에 n이 포함되어 있으면 1을, 그렇지 않으면 0을 반환
+  if (num_list.includes(n)) {
+    answer = 1;
+  }
+
+  return answer;
+}
+```
+
+answer 변수를 0으로 초기화합니다.<br>
+
+num_list에 n이 포함되어 있는지를 확인하기 위해 includes 메서드를 사용합니다.<br>
+이 메서드는 배열이 특정 요소를 포함하고 있는지 여부를 확인합니다.<br>
+만약 num_list에 n이 포함되어 있다면, answer 변수를 1로 설정합니다. <br>
+그렇지 않으면 answer는 그대로 0으로 유지됩니다.<br>
+
+최종적으로 answer 값을 반환합니다.<br>
+
+예를 들어, solution([1, 2, 3, 4, 5], 3)를 호출하면 정수 3이 리스트에 포함되어 있기 때문에 1이 반환됩니다.<br>
+반면에 solution([1, 2, 3, 4, 5], 6)를 호출하면 정수 6이 리스트에 포함되어 있지 않기 때문에 0이 반환됩니다.<br>

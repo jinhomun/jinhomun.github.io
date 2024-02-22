@@ -1,0 +1,58 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day24-1"
+date: 2024-02-21 12:00:00 +0900
+categories: Javascript
+---
+
+### 커피 심부름😀
+
+팀의 막내인 철수는 아메리카노와 카페 라테만 판매하는 카페에서 팀원들의 커피를 사려고 합니다.<br>
+아메리카노와 카페 라테의 가격은 차가운 것과 뜨거운 것 상관없이 각각 4500, 5000원입니다.<br>
+각 팀원에게 마실 메뉴를 적어달라고 하였고, 그 중에서 메뉴만 적은 팀원의 것은 차가운 것으로 통일하고 "아무거나"를 적은 팀원의 것은 차가운 아메리카노로 통일하기로 하였습니다.<br>
+각 직원이 적은 메뉴가 문자열 배열 order로 주어질 때, 카페에서 결제하게 될 금액을 return 하는 solution 함수를 작성해주세요.<br> order의 원소는 아래의 것들만 들어오고, 각각의 의미는 다음과 같습니다.<br>
+
+|          order의 원소          |       의미        |
+| :----------------------------: | :---------------: |
+| "iceamericano", "americanoice" | 차가운 아메리카노 |
+| "hotamericano", "americanohot" | 따뜻한 아메리카노 |
+| "icecafelatte", "cafelatteice" | 차가운 카페 라테  |
+| "hotcafelatte", "cafelattehot" | 따뜻한 카페 라테  |
+|          "americano"           |    아메리카노     |
+|          "cafelatte"           |     카페 라테     |
+|           "anything"           |     아무거나      |
+
+<br>
+
+※ 제한 사항<br>
+1 ≤ order의 길이 ≤ 1,000<br>
+
+입출력 <br>
+
+|                           order                           | result |
+| :-------------------------------------------------------: | :----: |
+| ["cafelatte", "americanoice", "hotcafelatte", "anything"] | 19000  |
+|       ["americanoice", "americano", "iceamericano"]       | 13500  |
+
+<br>
+
+```javascript
+const solution = (order) =>
+  order.reduce((acc, cur) => acc + (cur.includes("tte") ? 5000 : 4500), 0);
+```
+
+이 코드는 입력으로 받은 order 배열에 있는 각 주문 항목에 대해 가격을 계산하고 총 결제 금액을 반환하는 화살표 함수입니다.
+
+javascript
+Copy code
+const solution = (order) =>
+order.reduce((acc, cur) =>
+acc + (cur.includes('tte') ? 5000 : 4500),
+0);
+여기서 reduce 함수를 사용하여 배열의 각 요소를 순회하면서 누적된 값을 계산합니다.<br>
+초기값은 0으로 설정되어 있습니다. cur.includes('tte')는 현재 주문 항목에 'tte'가 포함되어 있는지 확인하는 조건입니다.<br>
+만약 포함되어 있다면, 해당 메뉴는 카페 라테이므로 5000원이 더해지고, 그렇지 않으면 아메리카노이므로 4500원이 더해집니다.<br>
+최종적으로 누적된 값이 총 결제 금액이 되고, 이 값이 함수의 반환값이 됩니다.<br>
+
+간단하게 설명하면, 함수는 받은 주문에 대해 아메리카노와 카페 라테를 구분하여 각 메뉴에 대한 가격을 계산하고, <br>
+모든 메뉴에 대한 가격을 합산하여 총 결제 금액을 반환합니다.<br>

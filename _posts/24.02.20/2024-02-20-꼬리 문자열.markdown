@@ -1,0 +1,54 @@
+---
+layout: post
+title: "프로그래머스 기초트레이닝 Day23-2"
+date: 2024-02-20 12:10:00 +0900
+categories: Javascript
+---
+
+### 꼬리 문자열😀
+
+문자열들이 담긴 리스트가 주어졌을 때, 모든 문자열들을 순서대로 합친 문자열을 꼬리 문자열이라고 합니다.<br>
+꼬리 문자열을 만들 때 특정 문자열을 포함한 문자열은 제외시키려고 합니다.<br>
+예를 들어 문자열 리스트 ["abc", "def", "ghi"]가 있고 문자열 "ef"를 포함한 문자열은 제외하고 꼬리 문자열을 만들면 "abcghi"가 됩니다.<br>
+
+문자열 리스트 str_list와 제외하려는 문자열 ex가 주어질 때, str_list에서 ex를 포함한 문자열을 제외하고 만든 꼬리 문자열을 return하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+2 ≤ str_list의 길이 ≤ 10<br>
+1 ≤ str_list의 원소의 길이 ≤ 10<br>
+1 ≤ ex의 길이 ≤ 5<br>
+
+입출력 <br>
+
+|       str_list        |  ex  | result   |
+| :-------------------: | :--: | -------- |
+| ["abc", "def", "ghi"] | "ef" | "abcghi" |
+| ["abc", "bbc", "cbc"] | "c"  | ""       |
+
+<br>
+
+```javascript
+function solution(str_list, ex) {
+  var answer = "";
+
+  // str_list의 각 문자열에 대해 반복
+  for (var i = 0; i < str_list.length; i++) {
+    // 현재 문자열이 ex를 포함하지 않으면 answer에 추가
+    if (!str_list[i].includes(ex)) {
+      answer += str_list[i];
+    }
+  }
+
+  return answer;
+}
+```
+
+answer 변수를 빈 문자열로 초기화합니다.<br>
+
+for 루프를 사용하여 문자열 리스트 str_list의 각 문자열을 확인합니다.<br>
+
+각 문자열이 ex를 포함하지 않는 경우에만 해당 문자열을 answer에 추가합니다.<br>
+
+모든 문자열을 확인하고 나면 최종적으로 만들어진 answer를 반환합니다.<br>
+
+예를 들어, solution(["abc", "def", "ghi"], "ef")를 호출하면 "ef"를 포함한 "def"가 제외되고, 나머지 문자열 "abc"과 "ghi"가 합쳐진 "abcghi"가 반환됩니다.<br>
