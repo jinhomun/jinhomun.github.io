@@ -1,0 +1,30 @@
+---
+layout: post
+title: "프로그래머스 코딩입문 Day1-3"
+date: 2024-02-23 12:20:00 +0900
+categories: Javascript
+---
+
+### 두 수의 곱😀
+
+정수 num1, num2가 매개변수 주어집니다. num1과 num2를 곱한 값을 return 하도록 solution 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+0 ≤ num1 ≤ 100<br>
+0 ≤ num2 ≤ 100<br>
+
+입출력 <br>
+
+| num1 | num2 | result |
+| :--: | :--: | ------ |
+|  3   |  4   | 12     |
+|  27  |  19  | 513    |
+
+<br>
+
+```javascript
+function solution(num1, num2) {
+  var answer = num1 * num2;
+  return answer;
+}
+```

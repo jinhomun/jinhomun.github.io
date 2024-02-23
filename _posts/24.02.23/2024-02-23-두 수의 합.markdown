@@ -1,0 +1,30 @@
+---
+layout: post
+title: "프로그래머스 코딩입문 Day1-1"
+date: 2024-02-23 12:00:00 +0900
+categories: Javascript
+---
+
+### 두 수의 합😀
+
+정수 num1과 num2가 주어질 때, num1과 num2의 합을 return하도록 soltuion 함수를 완성해주세요.<br>
+
+※ 제한 사항<br>
+-50,000 ≤ num1 ≤ 50,000<br>
+-50,000 ≤ num2 ≤ 50,000<br>
+
+입출력 <br>
+
+| num1 | num2 | result |
+| :--: | :--: | ------ |
+|  2   |  3   | 5      |
+| 100  |  2   | 102    |
+
+<br>
+
+```javascript
+function solution(num1, num2) {
+  var answer = num1 + num2;
+  return answer;
+}
+```
