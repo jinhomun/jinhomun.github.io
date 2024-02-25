@@ -1,0 +1,60 @@
+---
+layout: post
+title: "프로그래머스 코딩입문 Day3-3"
+date: 2024-02-25 12:20:00 +0900
+categories: Javascript
+---
+
+### 최빈값 구하기😀
+
+최빈값은 주어진 값 중에서 가장 자주 나오는 값을 의미합니다. <br>
+정수 배열 array가 매개변수로 주어질 때, 최빈값을 return 하도록 solution 함수를 완성해보세요. 최빈값이 여러 개면 -1을 return 합니다.<br>
+
+※ 제한 사항<br>
+0 < array의 길이 < 100<br>
+0 ≤ array의 원소 < 1000<br>
+
+입출력 <br>
+
+|       array        | result |
+| :----------------: | :----: |
+| [1, 2, 3, 3, 3, 4] |   3    |
+|    [1, 1, 2, 2]    |   -1   |
+|        [1]         |   1    |
+
+<br>
+
+```javascript
+function solution(array) {
+  var answer = 0;
+  var modeMap = {}; // 각 값의 등장 횟수를 저장할 객체
+
+  // 배열을 순회하며 각 값의 등장 횟수를 세기
+  for (var i = 0; i < array.length; i++) {
+    var num = array[i];
+    modeMap[num] = (modeMap[num] || 0) + 1;
+  }
+
+  var maxCount = 0; // 가장 많이 등장한 횟수
+  var modes = []; // 최빈값(들)
+
+  // modeMap을 순회하며 최빈값(들) 찾기
+  for (var key in modeMap) {
+    if (modeMap[key] > maxCount) {
+      maxCount = modeMap[key];
+      modes = [parseInt(key)];
+    } else if (modeMap[key] === maxCount) {
+      modes.push(parseInt(key));
+    }
+  }
+
+  // 최빈값이 여러 개인 경우 -1 반환, 아니면 최빈값 반환
+  if (modes.length > 1) {
+    answer = -1;
+  } else {
+    answer = modes[0];
+  }
+
+  return answer;
+}
+```
